@@ -1,9 +1,9 @@
 # Live-Projects
 
-##Overview
+## Overview
 Python Live Project - This live project took place within the Django web framework.  I was tasked with creating a graph to plot inputs from a user entry form that were thaen stored in a database.  This meant spending multiple days researching Django documentation and going through Django tutorials in order to understand the relationship between Django forms, modules, views, and url python files as well as Django html templates. It also required researching JavaScript chart language and syntax to preoperly display the visualizations.
 
-# Creating Variables in views.py
+# Creating variables in views.py
 First, a function had to be defined within the views.py file that would access the model object and obtain data values from that object.  These data values were represented by list variables that would later form the axes data values for the javascript chart within the html template.  These variables were passed into the html template using the return statement.
 
     def history_view(request):
@@ -30,8 +30,9 @@ First, a function had to be defined within the views.py file that would access t
             entryMeditate.append(0)
     return render(request, 'HabitTrackerApp/habit-history.html/', {'userEntries': userEntries, 'entryDates': entryDates, 'entryExercise': entryExercise, 'entrySleep': entrySleep, 'entryMood': entryMood, 'entryEnergy': entryEnergy, 'entryMeditate': entryMeditate})
 
-#Creating chart in html template
+# Creating chart in html template
 The variables were then pulled into the html file using the required Django syntax.  At that point, JavaScript and html were utilized in order to construct the required graph object.
+I spent a lot of time perfecting the graphical display - coloration, font sizes, legend, axes labels/formatting - I even inserted a function to hide the 0 value on the axes to prevent clutter.  The "meditate" variable was an additional challenge - I converted true/false to 1/0 so that it would plot, and then converted the axis labels to yes/no to make more sense to the end user.
 
     {% extends 'base.html' %}
     {% load static from staticfiles %}
@@ -264,6 +265,9 @@ The variables were then pulled into the html file using the required Django synt
             </script>
     </div>
     {% endblock %}
+
+## Summary
+This project was a great introduction into python and the Django web framework.  As I knew very little about the Django framework initially, the project allowed me to hone my abilities in self-sufficiency... almost all of the Django knowledge I applied on this project was self-taught/researched.  I also developed project management and team programming skills, as the project utilized Azure Devops to post user stories and manage repositories.  As a result, I became proficient in version control, git/git BASH, and python virtual environments.
 
 
 
