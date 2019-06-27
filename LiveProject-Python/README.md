@@ -3,6 +3,8 @@
 ## Overview
 Python Live Project - This live project took place within the Django web framework.  I was tasked with creating a graph to plot inputs from a user entry form that were then stored in a database.  This meant spending multiple days researching Django documentation and going through Django tutorials in order to understand the relationship between Django forms, modules, views, and url python files as well as Django html templates. It also required researching JavaScript chart language and syntax to properly display the visualizations.
 
+Link to the graph can be found here: https://github.com/TimmyC101/LiveProjects/blob/master/LiveProject-Python/Habit_Graph_image.PNG
+
 # Creating variables in views.py
 First, a function had to be defined within the views.py file that would access the model object and obtain data values from that object.  These data values were represented by list variables that would later form the axes data values for the javascript chart within the html template.  These variables were passed into the html template using the return statement.
 
