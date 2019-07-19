@@ -5,7 +5,7 @@ Python Live Project - This live project took place within the Django web framewo
 
 Link to the graph can be found here: https://github.com/TimmyC101/LiveProjects/blob/master/LiveProject-Python/Habit_Graph_image.PNG
 
-# Creating variables in views.py
+## Creating variables in views.py
 First, a function had to be defined within the views.py file that would access the model object and obtain data values from that object.  These data values were represented by list variables that would later form the axes data values for the javascript chart within the html template.  These variables were passed into the html template using the return statement.
 
     def history_view(request):
@@ -32,7 +32,7 @@ First, a function had to be defined within the views.py file that would access t
             entryMeditate.append(0)
     return render(request, 'HabitTrackerApp/habit-history.html/', {'userEntries': userEntries, 'entryDates': entryDates, 'entryExercise': entryExercise, 'entrySleep': entrySleep, 'entryMood': entryMood, 'entryEnergy': entryEnergy, 'entryMeditate': entryMeditate})
 
-# Creating chart in html template
+## Creating chart in html template
 The variables were then pulled into the html file using the required Django syntax.  At that point, JavaScript and html were utilized in order to construct the required graph object.
 I spent a lot of time perfecting the graphical display - coloration, font sizes, legend, axes labels/formatting - I even inserted a function to hide the 0 value on the axes to prevent clutter.  The "meditate" variable was an additional challenge - I converted true/false to 1/0 so that it would plot, and then converted the axis labels to yes/no to make more sense to the end user.
 
