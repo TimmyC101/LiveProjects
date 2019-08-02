@@ -145,7 +145,7 @@ I added background styling to the footer with fading opacity, and then wrote Jav
         </div>
     </footer>
 
-#Sample CSS
+# Sample CSS
     footer {
         display: flex;
         width: 250px;
