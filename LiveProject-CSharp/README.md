@@ -195,7 +195,8 @@ I added background styling to the footer with fading opacity, and then wrote Jav
 I made nearly a dozen pilot projects while experimenting with various effects, and obviously will not include all of the code here.  I will just demonstrate a menu icon that translates with the mouse. Hovering over the icon expands the navigation bar and slides the menu icon to the right.  The html is not included because I did not write the majority of it.
 
 #Pictures
-
+    https://github.com/TimmyC101/LiveProjects/blob/master/LiveProject-CSharp/Collapsed-Navbar.PNG
+    https://github.com/TimmyC101/LiveProjects/blob/master/LiveProject-CSharp/Expanded-Navbar.PNG
 
 
 #CSS
