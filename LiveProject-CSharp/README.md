@@ -138,14 +138,14 @@ Additionally, I wrote a JavaScript function that identified mobile users based o
 ## Styled & Animated Footer
 I added background styling to the footer with fading opacity, and then wrote JavaScript to animate the text.  When the user hovers over the footer, the text begins moving left to right until it is hidden, then resets back to the left side offscreen, and begins sliding to the right again.  When the mouse leaves the footer, the text resets to the middle of the footer element.
 
-#HTML
+# Sample HTML
     <footer>
         <div class="slider">
             &copy; @DateTime.Now.Year - Management Portal
         </div>
     </footer>
 
-#CSS
+#Sample CSS
     footer {
         display: flex;
         width: 250px;
@@ -160,7 +160,7 @@ I added background styling to the footer with fading opacity, and then wrote Jav
         overflow: hidden;
     }
 
-#JS
+# Sample JS
     $(document).ready(function () {
 
         var x = 0;
@@ -199,7 +199,7 @@ I made nearly a dozen pilot projects while experimenting with various effects, a
     https://github.com/TimmyC101/LiveProjects/blob/master/LiveProject-CSharp/Expanded-Navbar.PNG
 
 
-#CSS
+#Sample CSS
     .sidenav {
         height: 100%;
         width: 230px;
@@ -273,7 +273,7 @@ I made nearly a dozen pilot projects while experimenting with various effects, a
 
 
 
-#JS
+#Sample JS
     // Slide navbar icon with mouse cursor
     $(document).ready(function () {
         $(window).on("mousemove", function (e) {
