@@ -1,6 +1,6 @@
 # Live-Projects
 
-## Overview
+# Overview
 C# Live Project - These live projects took place within the ASP.NET web framework and utilized the MVC design pattern.  
 
 My main tasks during the first 2-week sprint involved creating a dynamic password validation box and improving overall mobile compatibility for the various pages of the site.  While working on these two tasks, I developed and evolved my understanding of CSS and JS.  Specifically, I gained a deep understanding of flexboxes and how they can be leveraged to create adaptable websites that can be compatible with many devices and screen widths without needing excessive code.  Additionally, I learned how to use JavaScript to create powerful, reactive modules within the website.
@@ -8,18 +8,18 @@ My main tasks during the first 2-week sprint involved creating a dynamic passwor
 During the second 2-week sprint, I spent most of my time learning about animations, JQuery, SVG, and how to utilize them together to create dynamic navigation bars and navbar icons. I created many pilot projects to design hamburger icons that both animate on various mouseevents or follow the mouse horizontally or vertically.  I also created multiple navigation bars, both horizontal and vertical, to appear/dissapear or translate on/off the screen based on various click or mouseover events.  I even wrote custom code to slide the body content with the expanding navigation bar, rather than simply overlapping it.  Lastly, I created a footer with text that perpetually translated left to right upon hover, and reset upon mouse exit.
 
 
-## Creating Dynamic Password Validation Box
+# Creating Dynamic Password Validation Box
 To be completely honest, most of this code was recycled so I won't take credit for it or paste it below; however, this task did help me understand how to utilize JavaScript to add and remove classes from website content, based on constantly changing conditions, in order to create dynamic, responsive websites. Essentially, every keyup within the password input box triggers a series of if statements, which then check for various conditions and add/remove classes depending upon those conditions.  The classes added/removed have varying CSS stylings, and the result of the CSS/JS working together is a dynamic password validation box.
 
 
-## Improve Mobile Compatibility Across Entire Project
+# Improve Mobile Compatibility Across Entire Project
 This task was a lot more involved.  I spent multiple days researching flexboxes, various CSS stylings, and numerous JS functions in order to determine the best way to create a mobile friendly application.  Initially, the code you see below was organized into html tables, which from my understanding, are not ideal for creating mobile applications.  Essentially, I converted everything to either:
 a) a series of flex columns within a single, wrappable flex row, or
 b) a series of flex rows within a single flex column
 This, combined with some CSS styling and JS, resulted in incredibly adaptable web pages.
 Additionally, I wrote a JavaScript function that identified mobile users based on screen size and dynamically resized the table columns in order to prevent "word scruntch" (technical term).
 
-# Sample HTML
+## Sample HTML
     <div class="IndexBody">
         <div class="text-center">
             <h2>Company News</h2>
@@ -62,7 +62,7 @@ Additionally, I wrote a JavaScript function that identified mobile users based o
         </div>
     </div>
 
-# Sample CSS
+## Sample CSS
     /* Begin styling for mobile compatibility - News page */
 
     .news-table {
@@ -115,7 +115,7 @@ Additionally, I wrote a JavaScript function that identified mobile users based o
 
     /* End styling for mobile compatibility - News page */
 
-# Sample JS
+## Sample JS
     // Set column width of "news-title" class div 
     // based on widest text for mobile users (prevents misaligned columns)
     // Applies to News/Index
@@ -135,17 +135,17 @@ Additionally, I wrote a JavaScript function that identified mobile users based o
         }
     });
 
-## Styled & Animated Footer
+# Styled & Animated Footer
 I added background styling to the footer with fading opacity, and then wrote JavaScript to animate the text.  When the user hovers over the footer, the text begins moving left to right until it is hidden, then resets back to the left side offscreen, and begins sliding to the right again.  When the mouse leaves the footer, the text resets to the middle of the footer element.
 
-# Sample HTML
+## Sample HTML
     <footer>
         <div class="slider">
             &copy; @DateTime.Now.Year - Management Portal
         </div>
     </footer>
 
-# Sample CSS
+## Sample CSS
     footer {
         display: flex;
         width: 250px;
@@ -160,7 +160,7 @@ I added background styling to the footer with fading opacity, and then wrote Jav
         overflow: hidden;
     }
 
-# Sample JS
+## Sample JS
     $(document).ready(function () {
 
         var x = 0;
@@ -191,15 +191,15 @@ I added background styling to the footer with fading opacity, and then wrote Jav
 
     });
 
-##Animated Navbar and Navbar Icons
+# Animated Navbar and Navbar Icons
 I made nearly a dozen pilot projects while experimenting with various effects, and obviously will not include all of the code here.  I will just demonstrate a menu icon that translates with the mouse. Hovering over the icon expands the navigation bar and slides the menu icon to the right.  The html is not included because I did not write the majority of it.
 
-#Pictures
+## Pictures
     https://github.com/TimmyC101/LiveProjects/blob/master/LiveProject-CSharp/Collapsed-Navbar.PNG
     https://github.com/TimmyC101/LiveProjects/blob/master/LiveProject-CSharp/Expanded-Navbar.PNG
 
 
-#Sample CSS
+## Sample CSS
     .sidenav {
         height: 100%;
         width: 230px;
@@ -273,7 +273,7 @@ I made nearly a dozen pilot projects while experimenting with various effects, a
 
 
 
-#Sample JS
+## Sample JS
     // Slide navbar icon with mouse cursor
     $(document).ready(function () {
         $(window).on("mousemove", function (e) {
