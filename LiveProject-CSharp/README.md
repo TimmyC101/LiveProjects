@@ -1,11 +1,13 @@
 # Live-Projects
 
 # Overview
-C# Live Project - These live projects took place within the ASP.NET web framework and utilized the MVC design pattern.  
+C# Live Project - These live projects took place within the ASP.NET web framework and utilized the MVC design pattern.
 
 My main tasks during the first 2-week sprint involved creating a dynamic password validation box and improving overall mobile compatibility for the various pages of the site.  While working on these two tasks, I developed and evolved my understanding of CSS and JS.  Specifically, I gained a deep understanding of flexboxes and how they can be leveraged to create adaptable websites that can be compatible with many devices and screen widths without needing excessive code.  Additionally, I learned how to use JavaScript to create powerful, reactive modules within the website.
 
 During the second 2-week sprint, I spent most of my time learning about animations, JQuery, SVG, and how to utilize them together to create dynamic navigation bars and navbar icons. I created many pilot projects to design hamburger icons that both animate on various mouseevents or follow the mouse horizontally or vertically.  I also created multiple navigation bars, both horizontal and vertical, to appear/dissapear or translate on/off the screen based on various click or mouseover events.  I even wrote custom code to slide the body content with the expanding navigation bar, rather than simply overlapping it.  Lastly, I created a footer with text that perpetually translated left to right upon hover, and reset upon mouse exit.
+
+My final sprint was focused primarily on back-end work.  My first task involved troubleshooting a geolocation API to prevent it from returning invalid coordinates when the exact address could not be found.  While this did not result in writing much original code, I did learn about geolocation API's, how to use JS to geolocate, and how to display leaflet maps on a webpage.  In order to complete this task, I also had to learn about and modify seed data, which I had not previously worked with.  My second task involved modifying several existing models to include phone number properties, and then modifying controllers and views to access these properties and pass them back and forth, enhancing my understanding of the overall MVC structure and how each element communicates with the others.  While working on this task I also learned about the ApplicationDbContext and UserManager .NET classes.  Lastly, I completed miscellaneous tasks that improved my knowledge of the Viewbag functionality.
 
 
 # Creating Dynamic Password Validation Box
@@ -298,3 +300,15 @@ https://github.com/TimmyC101/LiveProjects/blob/master/LiveProject-CSharp/Expande
             $(".animated-icon").removeClass("open");
         });
     });
+
+# Geolocation API
+What we encountered with this API was that when the city, state, and zip were all accurate, but the street address did not exist, the API was not erroring and would return the lat/long for the United States.  So I identified where in the API I could insert an if statement to detect if this was in fact the lat/long being returned.  If it was, I used Regex to look within the full address variable and extract the zip code, and then rerun the API geolocator using only the zip as an argument.  This resulted in an accurate lat/long for the zip code despite an address that did not exist.
+
+## Sample C#
+    if (response.results[0].locations[0].latLng.lat == 39.78373 && response.results[0].locations[0].latLng.lng == -100.445882)
+        {
+            Regex regCode = new Regex("[0-9]{5}(?:-[0-9]{4})?");
+            var match = regCode.Match(geocodeAddress); // Find zip code string within full address string
+            string zip = match.Value;
+            return GetGeocode(zip);
+        }
