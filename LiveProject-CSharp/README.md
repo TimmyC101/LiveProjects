@@ -302,7 +302,7 @@ https://github.com/TimmyC101/LiveProjects/blob/master/LiveProject-CSharp/Expande
     });
 
 # Geolocation API
-What we encountered with this API was that when the city, state, and zip were all accurate, but the street address did not exist, the API was not erroring and would return the lat/long for the United States.  So I identified where in the API I could insert an if statement to detect if this was in fact the lat/long being returned.  If it was, I used Regex to look within the full address variable and extract the zip code, and then rerun the API geolocator using only the zip as an argument.  This resulted in an accurate lat/long for the zip code despite an address that did not exist.
+What we encountered with this API was that when the city, state, and zip were all accurate, but the street address did not exist, the API was not erroring and would return the default lat/long for the United States (somewhere in Kansas).  So I identified where in the API I could insert an if statement to detect if this was in fact the lat/long being returned.  If it was, I used Regex to look within the full address variable and extract the zip code, and then rerun the API geolocator using only the zip as an argument.  This resulted in an accurate lat/long for the zip code despite an address that did not exist.
 
 ## Sample C#
     if (response.results[0].locations[0].latLng.lat == 39.78373 && response.results[0].locations[0].latLng.lng == -100.445882)
